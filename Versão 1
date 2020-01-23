@@ -1,0 +1,2257 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int main() {
+	int rep;
+	do {
+		system("cls");
+		cout << "Atualizado em 22/01/2020 às 21:00:00 (UTC -3) de acordo com as notas de corte parciais do SISU APENAS PARA O CAMPUS PALMAS. Motivo: Estou trabalhando desde a semana passada em tempo integral, até sábado irei atualizar tudo. " <<endl<< "Seja bem vindo ao simulador do SISU 2020/1, um projeto independente do acadêmico de Engenharia Civil, Gabriel Miranda de Oliveira." << endl << " Contato: gabriel.miranda@mail.uft.edu.br." << endl << "Ofereço aulas de reforço, detalhes no whatsapp(63)981125083" << endl << "" << endl;
+		cout << "Algoritmo em linguagem c++ que calcula cursos compatíveis com a nota do pretendente à vaga na Universidade Federal do Tocantins em 2020/1 via SISU, desenvolvido por Gabriel Miranda de Oliveira" << endl;
+		cout << "Utilize .(ponto) como separador decimal. " << endl << " " << endl;
+		cout << "Digite a nota em linguagens: " << endl;
+		float lin;
+		cin >> lin;
+		cout << " " << endl;
+		cout << "Digite a nota em redação: " << endl;
+		float red;
+		cin >> red;
+		cout << " " << endl;
+		cout << "Digite a nota em ciências humanas: " << endl;
+		float hum;
+		cin >> hum;
+		cout << " " << endl;
+		cout << "Digite a nota em matemática: " << endl;
+		float mat;
+		cin >> mat;
+		cout << " " << endl;
+		cout << "Digite a nota em ciências da natureza: " << endl;
+		float nat;
+		cin >> nat;
+		cout << " " << endl;
+		cout << "Você cursou integralmente o ensino médio em escolas públicas? " << endl;
+		cout << "Digite 1 para Não e 2 para Sim. " << endl;
+		int esc;
+		cin >> esc;
+		cout << " " << endl;
+		cout << "Você é indígena? " << endl;
+		cout << "Digite 1 para Não e 2 para Sim. " << endl;
+		int ind;
+		cin >> ind;
+		cout << " " << endl;
+		cout << "Você é negro, pardo ou indígena? " << endl;
+		cout << "Digite 1 para Não e 2 para Sim. " << endl;
+		int cor;
+		cin >> cor;
+		cout << " " << endl;
+		cout << "Você tem renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo? " << endl;
+		cout << "Digite 1 para Não e 2 para Sim. " << endl;
+		int ren;
+		cin >> ren;
+		cout << " " << endl;
+		cout << "Você é portador de deficiência inscrita na Classificação Internacional de Doença? " << endl;
+		cout << "Digite 1 para Não e 2 para Sim. " << endl;
+		int def;
+		cin >> def;
+		cout << " " << endl;
+		cout << "Você é quilombola? " << endl;
+		cout << "Digite 1 para Não e 2 para Sim. " << endl;
+		int qui;
+		cin >> qui;
+		cout << " " << endl;
+		cout << "Você passaria nos seguintes cursos: " << endl;
+		cout << " " << endl;
+		//retirei um centésimo das notas de corte por conta do arredondamento feito pelo MEC
+		// ANALISAR NOTAS DE CORTE PARCIAIS
+		{
+			cout << "Universidade Federal do Tocantins, Campus Palmas:" << endl << " " << endl;
+			float admn = (((red + nat + (hum * 2) + (lin * 4) + (mat * 4)) / 12));
+			float adm = 641.95;
+			float adma1 = 0.01; //sem inscrito =SEM ou sem
+			float adma2 = 525.38;
+			float adml1 = 611.77;
+			float adml2 = 572.7;
+			float adml5 = 612.21;
+			float adml6 = 596.79;
+			float adml10 = 444.84;
+			float adml14 = 492.23;
+			float arqn = (((red + nat + hum + lin + mat) / 5));
+			float arq = 692.25;
+			float arqa1 = 0.01; //sem inscrito
+			float arqa2 = 501.75;
+			float arql2 = 655.85;
+			float arql6 = 631.99;
+			float arql10 = 0.01; //sem inscrito
+			float arql14 = 522.63;
+			float comn = (((red + (nat * 3) + hum + (lin * 4) + (mat * 4)) / 13));
+			float com = 646.39;
+			float coma1 = 0.01; // SEM
+			float coma2 = 0.01; //SEM
+			float coml1 = 660.24;
+			float coml2 = 573.9;
+			float coml5 = 624.81;
+			float coml6 = 622.71;
+			float coml10 = 482.35;
+			float coml14 = 0.01; //SEM INSCRITO
+			float conn = ((((red * 2) + nat + (hum * 3) + (lin * 4) + (mat * 3)) / 13));
+			float con = 626.17;
+			float cona1 = 0.01; //SEM
+			float cona2 = 488.4;
+			float conl1 = 624.26;
+			float conl2 = 648.89;
+			float conl5 = 632.29;
+			float conl6 = 603.47;
+			float conl10 = 440.89;
+			float conl14 = 605.92;
+			float econ = ((((red * 2) + nat + (hum * 3) + (lin * 3) + (mat * 3)) / 12));
+			float eco = 631.73;
+			float ecoa1 = 0.01; //SEM
+			float ecoa2 = 488.01;
+			float ecol1 = 592.77;
+			float ecol2 = 615.17;
+			float ecol5 = 592.63;
+			float ecol6 = 590.57;
+			float ecol10 = 0.01; //SEM
+			float ecol14 = 0.01; //SEM
+			float dirn = (((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12));
+			float dir = 677.21;
+			float dira1 = 546.97;
+			float dira2 = 587.72;
+			float dirl1 = 667.19;
+			float dirl2 = 650.83;
+			float dirl5 = 678.95;
+			float dirl6 = 653.77;
+			float dirl10 = 573.33;
+			float dirl14 = 600.33;
+			float enfn = (((red + (nat * 4) + hum + (lin * 4) + (mat * 3)) / 13));
+			float enf = 644.95;
+			float enfa1 = 0.01; //sem
+			float enfa2 = 578.18;
+			float enfl2 = 627.8;
+			float enfl6 = 606.35;
+			float enfl10 = 551.75;
+			float ambn = (((red + (nat * 3) + (hum * 2) + (lin * 2) + (mat * 3)) / 11));
+			float amb = 590.64;
+			float amba1 = 0.01; //sem
+			float amba2 = 446.65;
+			float ambl1 = 626.14;
+			float ambl2 = 542.14;
+			float ambl5 = 588.31;
+			float ambl6 = 557.89;
+			float ambl10 = 0.01; //sem
+			float ambl14 = 0.01; //sem
+			float civn = (((red + (nat * 4) + hum + (lin * 3) + (mat * 4)) / 13));
+			float civ = 666.6;
+			float civa1 = 469.31;
+			float civa2 = 591.01;
+			float civl1 = 634.07;
+			float civl2 = 620.47;
+			float civl5 = 665.67;
+			float civl6 = 625.59;
+			float civl10 = 0.01; //sem
+			float civl14 = 395.03;
+			float alin = ((((red * 2) + (nat * 4) + hum + (lin * 2) + (mat * 4)) / 13));
+			float ali = 655.6; //arrumar daqui pra frente
+			float alia1 = 441.89;
+			float alia2 = 587.89;
+			float alil1 = 646.48;
+			float alil2 = 610.53;
+			float alil5 = 625.23;
+			float alil6 = 622.54;
+			float alil10 = 535.35;
+			float alil14 = 410.06;
+			float elen = (((red + (nat * 3) + hum + (lin * 4) + (mat * 4)) / 13));
+			float ele = 687.63;
+			float elea1 = 576.21;
+			float elea2 = 586.52;
+			float elel1 = 608.24;
+			float elel2 = 648.43;
+			float elel5 = 671.06;
+			float elel6 = 632.18;
+			float elel10 = 526.62;
+			float elel14 = 475.62;
+			float filn = ((((red * 2) + nat + (hum * 4) + (lin * 4) + mat) / 12));
+			float fil = 635.66;
+			float fila1 = 571.49;
+			float fila2 = 571.38;
+			float fill1 = 638.47;
+			float fill2 = 615.95;
+			float fill5 = 654.36;
+			float fill6 = 620.56;
+			float fill10 = 519.75;
+			float fill14 = 488.05;
+			float jorn = ((((red * 3) + nat + (hum * 3) + (lin * 4) + (mat * 2)) / 13));
+			float jor = 672.88;
+			float jora1 = 566.11;
+			float jora2 = 589.46;
+			float jorl1 = 655.18;
+			float jorl2 = 648.25;
+			float jorl5 = 646.71;
+			float jorl6 = 641.56;
+			float jorl10 = 579.18;
+			float jorl14 = 585.74;
+			float medn = ((((red * 3) + (nat * 4) + (hum * 2) + (lin * 3) + (mat * 2)) / 14));
+			float med = 788.2;
+			float meda1 = 734.79;
+			float meda2 = 751.42;
+			float medl1 = 738.49;
+			float medl2 = 739.44;
+			float medl5 = 771.78;
+			float medl6 = 760.98;
+			float medl10 = 659.56;
+			float medl14 = 710.68;
+			float nutn = ((((red * 2) + (nat * 4) + (hum * 2) + (lin * 3) + (mat * 3)) / 14));
+			float nut = 702.5;
+			float nuta1 = 614.38;
+			float nuta2 = 605.04;
+			float nutl1 = 661.38;
+			float nutl2 = 642.68;
+			float nutl5 = 689.84;
+			float nutl6 = 663.76;
+			float nutl10 = 535.81;
+			float nutl14 = 556.1;
+			float pedn = (((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12));
+			float ped = 625.2;
+			float peda1 = 505.73;
+			float peda2 = 558.97;
+			float pedl1 = 613.68;
+			float pedl2 = 599.71;
+			float pedl5 = 621.61;
+			float pedl6 = 610.95;
+			float pedl10 = 487.47;
+			float pedl14 = 529.28;
+			float tean = (((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12));
+			float tea = 606;
+			float teaa1 = 507.14;
+			float teaa2 = 509.49;
+			float teal1 = 601.02;
+			float teal2 = 595.17;
+			float teal5 = 598.93;
+			float teal6 = 595.9;
+			float teal10 = 512.85;
+			float teal14 = 533.58;
+			while (red >= 400 and admn >= adm) {
+				cout << "Administração " << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adml1 and ren >= 2 and esc >= 2) {
+				cout << "Administração para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adml2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Administração para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adml5 and esc >= 2) {
+				cout << "Administração para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adml6 and cor >= 2 and esc >= 2) {
+				cout << "Administração para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adml10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Administração para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adml14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Administração para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adma1 and ind >= 2) {
+				cout << "Administração para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 400 and admn >= adma2 and qui >= 2) {
+				cout << "Administração para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and arqn >= arq) {
+				cout << "Arquitetura " << endl;
+				break;
+			}
+			while (red >= 300 and arqn >= arql2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Arquitetura para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and arqn >= arql6 and cor >= 2 and esc >= 2) {
+				cout << "Arquitetura para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and arqn >= arql10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Arquitetura para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and arqn >= arql14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Arquitetura para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and arqn >= arqa1 and ind >= 2) {
+				cout << "Arquitetura para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and arqn >= arqa2 and qui >= 2) {
+				cout << "Arquitetura para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= com) {
+				cout << "Ciência da Computação " << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coml1 and ren >= 2 and esc >= 2) {
+				cout << "Ciência da Computação para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coml2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciência da Computação para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coml5 and esc >= 2) {
+				cout << "Ciência da Computação para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coml6 and cor >= 2 and esc >= 2) {
+				cout << "Ciência da Computação para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coml10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciência da Computação para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coml14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Ciência da Computação para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coma1 and ind >= 2) {
+				cout << "Ciência da Computação para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and comn >= coma2 and qui >= 2) {
+				cout << "Ciência da Computação para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= con) {
+				cout << "Ciências Contábeis " << endl;
+				break;
+			}
+			while (red >= 300 and conn >= conl1 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Contábeis para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= conl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Contábeis para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= conl5 and esc >= 2) {
+				cout << "Ciências Contábeis para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= conl6 and cor >= 2 and esc >= 2) {
+				cout << "Ciências Contábeis para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= conl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Contábeis para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= conl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Ciências Contábeis para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= cona1 and ind >= 2) {
+				cout << "Ciências Contábeis para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and conn >= cona2 and qui >= 2) {
+				cout << "Ciências Contábeis para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= eco) {
+				cout << "Ciências Econômicas " << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecol1 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Econômicas para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecol2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Econômicas para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecol5 and esc >= 2) {
+				cout << "Ciências Econômicas para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecol6 and cor >= 2 and esc >= 2) {
+				cout << "Ciências Econômicas para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecol10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Econômicas para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecol14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Ciências Econômicas para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecoa1 and ind >= 2) {
+				cout << "Ciências Econômicas para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and econ >= ecoa2 and qui >= 2) {
+				cout << "Ciências Econômicas para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dir) {
+				cout << "Direito " << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dirl1 and ren >= 2 and esc >= 2) {
+				cout << "Direito para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dirl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Direito para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dirl5 and esc >= 2) {
+				cout << "Direito para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dirl6 and cor >= 2 and esc >= 2) {
+				cout << "Direito para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dirl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Direito para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dirl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Direito para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dira1 and ind >= 2) {
+				cout << "Direito para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and dirn >= dira2 and qui >= 2) {
+				cout << "Direito para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and enfn >= enf) {
+				cout << "Enfermagem " << endl;
+				break;
+			}
+			while (red >= 300 and enfn >= enfl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Enfermagem para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and enfn >= enfl6 and cor >= 2 and esc >= 2) {
+				cout << "Enfermagem para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and enfn >= enfl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Enfermagem para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and enfn >= enfa1 and ind >= 2) {
+				cout << "Enfermagem para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and enfn >= enfa2 and qui >= 2) {
+				cout << "Enfermagem para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= amb) {
+				cout << "Engenharia Ambiental " << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= ambl1 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Ambiental para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= ambl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Ambiental para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= ambl5 and esc >= 2) {
+				cout << "Engenharia Ambiental para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= ambl6 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia Ambiental para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= ambl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Ambiental para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= ambl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia Ambiental para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= amba1 and ind >= 2) {
+				cout << "Engenharia Ambiental para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 450 and ambn >= amba2 and qui >= 2) {
+				cout << "Engenharia Ambiental para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civ) {
+				cout << "Engenharia Civil " << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civl1 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Civil para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Civil para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civl5 and esc >= 2) {
+				cout << "Engenharia Civil para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civl6 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia Civil para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Civil para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia Civil para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civa1 and ind >= 2) {
+				cout << "Engenharia Civil para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 400 and civn >= civa2 and qui >= 2) {
+				cout << "Engenharia Civil para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= ali) {
+				cout << "Engenharia de Alimentos " << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alil1 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia de Alimentos para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alil2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia de Alimentos para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alil5 and esc >= 2) {
+				cout << "Engenharia de Alimentos para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alil6 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia de Alimentos para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alil10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia de Alimentos para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alil14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia de Alimentos para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alia1 and ind >= 2) {
+				cout << "Engenharia de Alimentos para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and alin >= alia2 and qui >= 2) {
+				cout << "Engenharia de Alimentos para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= ele) {
+				cout << "Engenharia Elétrica " << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elel1 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Elétrica para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elel2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Elétrica para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elel5 and esc >= 2) {
+				cout << "Engenharia Elétrica para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elel6 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia Elétrica para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elel10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Elétrica para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elel14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia Elétrica para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elea1 and ind >= 2) {
+				cout << "Engenharia Elétrica para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and elen >= elea2 and qui >= 2) {
+				cout << "Engenharia Elétrica para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fil) {
+				cout << "Filosofia " << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fill1 and ren >= 2 and esc >= 2) {
+				cout << "Filosofia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fill2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Filosofia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fill5 and esc >= 2) {
+				cout << "Filosofia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fill6 and cor >= 2 and esc >= 2) {
+				cout << "Filosofia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fill10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Filosofia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fill14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Filosofia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fila1 and ind >= 2) {
+				cout << "Filosofia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and filn >= fila2 and qui >= 2) {
+				cout << "Filosofia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jor) {
+				cout << "Jornalismo " << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jorl1 and ren >= 2 and esc >= 2) {
+				cout << "Jornalismo para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jorl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Jornalismo para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jorl5 and esc >= 2) {
+				cout << "Jornalismo para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jorl6 and cor >= 2 and esc >= 2) {
+				cout << "Jornalismo para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jorl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Jornalismo para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jorl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Jornalismo para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jora1 and ind >= 2) {
+				cout << "Jornalismo para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 400 and jorn >= jora2 and qui >= 2) {
+				cout << "Jornalismo para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= med) {
+				cout << "Medicina " << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl1 and ren >= 2 and esc >= 2) {
+				cout << "Medicina para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Medicina para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl5 and esc >= 2) {
+				cout << "Medicina para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl6 and cor >= 2 and esc >= 2) {
+				cout << "Medicina para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Medicina para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Medicina para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= meda1 and ind >= 2) {
+				cout << "Medicina para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= meda2 and qui >= 2) {
+				cout << "Medicina para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nut) {
+				cout << "Nutrição " << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nutl1 and ren >= 2 and esc >= 2) {
+				cout << "Nutrição para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nutl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Nutrição para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nutl5 and esc >= 2) {
+				cout << "Nutrição para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nutl6 and cor >= 2 and esc >= 2) {
+				cout << "Nutrição para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nutl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Nutrição para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nutl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Nutrição para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nuta1 and ind >= 2) {
+				cout << "Nutrição para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and nutn >= nuta2 and qui >= 2) {
+				cout << "Nutrição para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= ped) {
+				cout << "Pedagogia " << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl1 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl5 and esc >= 2) {
+				cout << "Pedagogia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl6 and cor >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= peda1 and ind >= 2) {
+				cout << "Pedagogia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= peda2 and qui >= 2) {
+				cout << "Pedagogia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= tea) {
+				cout << "Teatro " << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teal1 and ren >= 2 and esc >= 2) {
+				cout << "Teatro para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teal2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Teatro para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teal5 and esc >= 2) {
+				cout << "Teatro para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teal6 and cor >= 2 and esc >= 2) {
+				cout << "Teatro para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teal10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Teatro para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teal14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Teatro para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teaa1 and ind >= 2) {
+				cout << "Teatro para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and tean >= teaa2 and qui >= 2) {
+				cout << "Teatro para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Araguaína (CIMBA):" << endl << " " << endl;
+			float letn = ((red + nat + hum + lin + mat) / 5);
+			float let = 618.81;
+			float leta1 = 481.37;
+			float leta2 = 512.93;
+			float letl1 = 618.01;
+			float letl2 = 601.61;
+			float letl5 = 604.97;
+			float letl6 = 605.95;
+			float letl10 = 489.23;
+			float letl14 = 467.23;
+			float bion = ((red + (nat * 4) + (hum * 2) + (lin * 4) + (mat * 2)) / 13);
+			float bio = 648.41;
+			float bioa1 = 513.57;
+			float bioa2 = 555.5;
+			float biol1 = 628.87;
+			float biol2 = 608.7;
+			float biol5 = 620.7;
+			float biol6 = 602.53;
+			float biol10 = 520.34;
+			float biol14 = 467.99;
+			float fisn = ((red + (nat * 3) + hum + (lin * 2.5) + (mat * 3)) / 10.5);
+			float fis = 605.25;
+			float fisa1 = 452.96;
+			float fisa2 = 535.61;
+			float fisl1 = 557.75;
+			float fisl2 = 579.68;
+			float fisl5 = 587.79;
+			float fisl6 = 571.18;
+			float geon = ((red + nat + (hum * 3) + (lin * 2) + mat) / 8);
+			float geo = 603.63;
+			float geoa1 = 530.92;
+			float geoa2 = 544.5;
+			float geol1 = 600.8;
+			float geol2 = 588.23;
+			float geol5 = 596.95;
+			float geol6 = 587.94;
+			float geol10 = 516.25;
+			float geol14 = 533.23;
+			float coon = ((red + nat + (hum * 2) + (lin * 2) + mat) / 7);
+			float coo = 579.93;
+			float cooa1 = 487.42;
+			float cooa2 = 535.22;
+			float cool1 = 583.96;
+			float cool2 = 575.59;
+			float cool5 = 576.56;
+			float cool6 = 569.28;
+			float cool10 = 524.09;
+			float cool14 = 429.85;
+			float turn = ((red + nat + (hum * 2) + (lin * 2) + mat) / 7);
+			float tur = 589.6;
+			float tura1 = 426.42;
+			float tura2 = 530.86;
+			float turl1 = 575.23;
+			float turl2 = 574.7;
+			float turl5 = 575.86;
+			float turl6 = 586.85;
+			float turl10 = 471.48;
+			float turl14 = 480.79;
+			float hisn = ((red + nat + (hum * 3) + (lin * 2) + mat) / 8);
+			float his = 634.72;
+			float hisa1 = 531.89;
+			float hisa2 = 536.54;
+			float hisl1 = 632.02;
+			float hisl2 = 595.58;
+			float hisl5 = 620.7;
+			float hisl6 = 603.5;
+			float hisl10 = 509.73;
+			float hisl14 = 519.9;
+			float logn = (((red * 2) + nat + (hum * 2) + (lin * 4) + (mat * 4)) / 13);
+			float log = 617.55;
+			float loga1 = 481.04;
+			float loga2 = 521.99;
+			float logl1 = 595.37;
+			float logl2 = 590.79;
+			float logl5 = 629.44;
+			float logl6 = 568.97;
+			float logl10 = 556.05;
+			float logl14 = 410.92;
+			float maten = ((red + nat + hum + lin + mat) / 5);
+			float mate = 616.17;
+			float matea1 = 483.21;
+			float matea2 = 550.01;
+			float matel1 = 675.41;
+			float matel2 = 597.07;
+			float matel5 = 597.37;
+			float matel6 = 594.69;
+			float matel10 = 450.77;
+			float matel14 = 316.43;
+			float quimn = ((red + (nat * 4) + hum + (lin * 4) + (mat * 3)) / 13);
+			float quim = 609.78;
+			float quima1 = 471.12;
+			float quima2 = 517.58;
+			float quiml1 = 613.68;
+			float quiml2 = 580.42;
+			float quiml5 = 604.15;
+			float quiml6 = 600.13;
+			float quiml14 = 541.59;
+			while (red >= 300 and letn >= let) {
+				cout << "Letras (Língua Portuguesa) " << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl1 and ren >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl5 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl6 and cor >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= leta1 and ind >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= leta2 and qui >= 2) {
+				cout << "Letras (Língua Portuguesa) para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bio) {
+				cout << "Biologia " << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol1 and ren >= 2 and esc >= 2) {
+				cout << "Biologia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Biologia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol5 and esc >= 2) {
+				cout << "Biologia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol6 and cor >= 2 and esc >= 2) {
+				cout << "Biologia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Biologia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Biologia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bioa1 and ind >= 2) {
+				cout << "Biologia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bioa2 and qui >= 2) {
+				cout << "Biologia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and fisn >= fis) {
+				cout << "Física " << endl;
+				break;
+			}
+			while (red >= 300 and fisn >= fisl1 and ren >= 2 and esc >= 2) {
+				cout << "Física para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and fisn >= fisl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Física para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and fisn >= fisl5 and esc >= 2) {
+				cout << "Física para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and fisn >= fisl6 and cor >= 2 and esc >= 2) {
+				cout << "Física para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and fisn >= fisa1 and ind >= 2) {
+				cout << "Física para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and fisn >= fisa2 and qui >= 2) {
+				cout << "Física para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geo) {
+				cout << "Geografia " << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geol1 and ren >= 2 and esc >= 2) {
+				cout << "Geografia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and geon >= geol2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Geografia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and geon >= geol5 and esc >= 2) {
+				cout << "Geografia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and geon >= geol6 and cor >= 2 and esc >= 2) {
+				cout << "Geografia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and geon >= geol10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Geografia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and geon >= geol14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Geografia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and geon >= geoa1 and ind >= 2) {
+				cout << "Geografia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 400 and geon >= geoa2 and qui >= 2) {
+				cout << "Geografia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= coo) {
+				cout << "Gestão de Cooperativas " << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cool1 and ren >= 2 and esc >= 2) {
+				cout << "Gestão de Cooperativas para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cool2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Gestão de Cooperativas para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cool5 and esc >= 2) {
+				cout << "Gestão de Cooperativas para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cool6 and cor >= 2 and esc >= 2) {
+				cout << "Gestão de Cooperativas para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cool10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Gestão de Cooperativas para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cool14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Gestão de Cooperativas para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cooa1 and ind >= 2) {
+				cout << "Gestão de Cooperativas para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 0.01 and coon >= cooa2 and qui >= 2) {
+				cout << "Gestão de Cooperativas para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= tur) {
+				cout << "Gestão de Turismo " << endl;
+				break;
+			}
+			while (red >= 300 and turn >= turl1 and ren >= 2 and esc >= 2) {
+				cout << "Gestão de Turismo para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= turl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Gestão de Turismo para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= turl5 and esc >= 2) {
+				cout << "Gestão de Turismo para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= turl6 and cor >= 2 and esc >= 2) {
+				cout << "Gestão de Turismo para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= turl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Gestão de Turismo para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= turl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Gestão de Turismo para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= tura1 and ind >= 2) {
+				cout << "Gestão de Turismo para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and turn >= tura2 and qui >= 2) {
+				cout << "Gestão de Turismo para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= his) {
+				cout << "História " << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl1 and ren >= 2 and esc >= 2) {
+				cout << "História para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "História para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl5 and esc >= 2) {
+				cout << "História para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl6 and cor >= 2 and esc >= 2) {
+				cout << "História para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "História para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "História para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisa1 and ind >= 2) {
+				cout << "História para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisa2 and qui >= 2) {
+				cout << "História para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= log) {
+				cout << "Logística " << endl;
+				break;
+			}
+			while (red >= 300 and logn >= logl1 and ren >= 2 and esc >= 2) {
+				cout << "Logística para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= logl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Logística para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= logl5 and esc >= 2) {
+				cout << "Logística para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= logl6 and cor >= 2 and esc >= 2) {
+				cout << "Logística para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= logl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Logística para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= logl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Logística para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= loga1 and ind >= 2) {
+				cout << "Logística para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and logn >= loga2 and qui >= 2) {
+				cout << "Logística para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= mate) {
+				cout << "Matemática " << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel1 and ren >= 2 and esc >= 2) {
+				cout << "Matemática para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Matemática para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel5 and esc >= 2) {
+				cout << "Matemática para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel6 and cor >= 2 and esc >= 2) {
+				cout << "Matemática para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Matemática para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Matemática para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matea1 and ind >= 2) {
+				cout << "Matemática para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matea2 and qui >= 2) {
+				cout << "Matemática para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quim) {
+				cout << "Química " << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml1 and ren >= 2 and esc >= 2) {
+				cout << "Química para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Química para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml5 and esc >= 2) {
+				cout << "Química para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml6 and cor >= 2 and esc >= 2) {
+				cout << "Química para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Química para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quima1 and ind >= 2) {
+				cout << "Química para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quima2 and qui >= 2) {
+				cout << "Química para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Araguaína (EMVZ):" << endl << " " << endl;
+			float medn = (((red * 3) + (nat * 4) + (hum * 2) + (lin * 3) + (mat * 2)) / 14);
+			float med = 783.35;
+			float meda1 = 743.15;
+			float meda2 = 753.93;
+			float medl1 = 745.85;
+			float medl2 = 729.76;
+			float medl5 = 761.59;
+			float medl6 = 747.72;
+			float medl10 = 658.82;
+			float medl14 = 717.99;
+			float vetn = ((red + (nat * 4) + hum + (lin * 4) + (mat * 3)) / 13);
+			float vet = 685.17;
+			float veta1 = 582.04;
+			float veta2 = 590.74;
+			float vetl1 = 638.26;
+			float vetl2 = 628.35;
+			float vetl5 = 684.14;
+			float vetl6 = 640.14;
+			float vetl10 = 551.53;
+			float vetl14 = 581.87;
+			float zoon = ((red + (nat * 4) + hum + (lin * 3) + (mat * 4)) / 13);
+			float zoo = 624.14;
+			float zooa1 = 527.38;
+			float zooa2 = 557.77;
+			float zool1 = 596.92;
+			float zool2 = 616.84;
+			float zool5 = 614.61;
+			float zool6 = 614.91;
+			float zool10 = 498.17;
+			float zool14 = 490.57;
+			while (red >= 300 and medn >= med) {
+				cout << "Medicina " << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl1 and ren >= 2 and esc >= 2) {
+				cout << "Medicina para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Medicina para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl5 and esc >= 2) {
+				cout << "Medicina para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl6 and cor >= 2 and esc >= 2) {
+				cout << "Medicina para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Medicina para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= medl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Medicina para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= meda1 and ind >= 2) {
+				cout << "Medicina para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and medn >= meda2 and qui >= 2) {
+				cout << "Medicina para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= vet) {
+				cout << "Medicina Veterinária " << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= vetl1 and ren >= 2 and esc >= 2) {
+				cout << "Medicina Veterinária para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= vetl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Medicina Veterinária para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= vetl5 and esc >= 2) {
+				cout << "Medicina Veterinária para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= vetl6 and cor >= 2 and esc >= 2) {
+				cout << "Medicina Veterinária para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= vetl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Medicina Veterinária para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= vetl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Medicina Veterinária para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= veta1 and ind >= 2) {
+				cout << "Medicina Veterinária para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and vetn >= veta2 and qui >= 2) {
+				cout << "Medicina Veterinária para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zoo) {
+				cout << "Zootecnia " << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zool1 and ren >= 2 and esc >= 2) {
+				cout << "Zootecnia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zool2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Zootecnia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zool5 and esc >= 2) {
+				cout << "Zootecnia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zool6 and cor >= 2 and esc >= 2) {
+				cout << "Zootecnia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zool10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Zootecnia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zool14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Zootecnia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zooa1 and ind >= 2) {
+				cout << "Zootecnia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and zoon >= zooa2 and qui >= 2) {
+				cout << "Zootecnia para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Porto Nacional:" << endl << " " << endl;
+			float letn = ((red + nat + hum + lin + mat) / 5);
+			float let = 620.99;
+			float leta1 = 474.53;
+			float leta2 = 528.61;
+			float letl1 = 580.23;
+			float letl2 = 579.99;
+			float letl5 = 538.47;
+			float letl6 = 576.77;
+			float letl10 = 468.25;
+			float bion = (((red * 2) + nat + hum + (lin * 2) + mat) / 7);
+			float bio = 654.62;
+			float bioa1 = 485.2;
+			float bioa2 = 635.06;
+			float biol1 = 630.98;
+			float biol2 = 646.55;
+			float biol5 = 653.63;
+			float biol6 = 646.3;
+			float socn = ((red + nat + (hum * 4) + (lin * 2) + mat) / 9);
+			float soc = 610.28;
+			float soca1 = 549.69;
+			float soca2 = 543.88;
+			float socl1 = 596.71;
+			float socl2 = 600.61;
+			float socl5 = 618.22;
+			float socl6 = 575.85;
+			float geon = ((red + nat + hum + lin + mat) / 5);
+			float geo = 586.73;
+			float geoa2 = 531.51;
+			float geol1 = 578.11;
+			float geol2 = 561.03;
+			float geol5 = 592.13;
+			float geol6 = 580.41;
+			float geol10 = 496.27;
+			float hisn = ((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12);
+			float his = 614.62;
+			float hisa1 = 488.1;
+			float hisa2 = 616.75;
+			float hisl1 = 616.56;
+			float hisl2 = 613.72;
+			float hisl5 = 550.97;
+			float hisl6 = 596.85;
+			float hisl10 = 531.02;
+			float reln = (((red * 3) + nat + (hum * 4) + (lin * 3) + mat) / 12);
+			float rel = 705.21;
+			float rela1 = 520.71;
+			float rela2 = 474.25;
+			float rell1 = 649.98;
+			float rell2 = 623.09;
+			float rell5 = 690.54;
+			float rell6 = 649.15;
+			float rell14 = 534.87;
+			while (red >= 300 and letn >= let) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) " << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl1 and ren >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl5 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl6 and cor >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= letl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= leta1 and ind >= 2) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and letn >= leta2 and qui >= 2) {
+				cout << "Letras (Língua Portuguesa ou Inglesa) para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bio) {
+				cout << "Ciências Biológicas " << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol1 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Biológicas para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Biológicas para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol5 and esc >= 2) {
+				cout << "Ciências Biológicas para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol6 and cor >= 2 and esc >= 2) {
+				cout << "Ciências Biológicas para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bioa1 and ind >= 2) {
+				cout << "Ciências Biológicas para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bioa2 and qui >= 2) {
+				cout << "Ciências Biológicas para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= soc) {
+				cout << "Ciências Sociais " << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl1 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Sociais para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Sociais para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl5 and esc >= 2) {
+				cout << "Ciências Sociais para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl6 and cor >= 2 and esc >= 2) {
+				cout << "Ciências Sociais para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= soca1 and ind >= 2) {
+				cout << "Ciências Sociais para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= soca2 and qui >= 2) {
+				cout << "Ciências Sociais para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geo) {
+				cout << "Geografia " << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geol1 and ren >= 2 and esc >= 2) {
+				cout << "Geografia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geol2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Geografia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geol5 and esc >= 2) {
+				cout << "Geografia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geol6 and cor >= 2 and esc >= 2) {
+				cout << "Geografia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geol10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Geografia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and geon >= geoa2 and qui >= 2) {
+				cout << "Geografia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= his) {
+				cout << "História " << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl1 and ren >= 2 and esc >= 2) {
+				cout << "História para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "História para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl5 and esc >= 2) {
+				cout << "História para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl6 and cor >= 2 and esc >= 2) {
+				cout << "História para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "História para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisa1 and ind >= 2) {
+				cout << "História para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and hisn >= hisa2 and qui >= 2) {
+				cout << "História para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rel) {
+				cout << "Relações Internacionais " << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rell1 and ren >= 2 and esc >= 2) {
+				cout << "Relações Internacionais para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rell2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Relações Internacionais para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rell5 and esc >= 2) {
+				cout << "Relações Internacionais para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rell6 and cor >= 2 and esc >= 2) {
+				cout << "Relações Internacionais para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rell14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Relações Internacionais para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rela1 and ind >= 2) {
+				cout << "Relações Internacionais para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and reln >= rela2 and qui >= 2) {
+				cout << "Relações Internacionais para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Gurupi:" << endl << " " << endl;
+			float agrn = ((red + (nat * 4) + hum + (lin * 4) + (mat * 3)) / 13);
+			float agr = 629.22;
+			float agra1 = 533.32;
+			float agra2 = 554.25;
+			float agrl1 = 619.54;
+			float agrl2 = 600.19;
+			float agrl5 = 612.68;
+			float agrl6 = 609.03;
+			float agrl10 = 493.08;
+			float agrl14 = 444.89;
+			float bion = ((red + (nat * 3) + hum + (lin * 4) + (mat * 4)) / 13);
+			float bio = 642.98;
+			float bioa1 = 512.43;
+			float bioa2 = 533.91;
+			float biol1 = 601.34;
+			float biol2 = 586.55;
+			float biol5 = 615.64;
+			float biol6 = 600.47;
+			float flon = ((red + (nat * 4) + hum + (lin * 3) + (mat * 4)) / 13);
+			float flo = 606.74;
+			float floa1 = 506.85;
+			float floa2 = 517.36;
+			float flol1 = 597.81;
+			float flol2 = 591.11;
+			float flol5 = 616.84;
+			float flol6 = 587.61;
+			float flol10 = 555.47;
+			float quimn = ((red + (nat * 4) + hum + (lin * 4) + (mat * 3)) / 13);
+			float quim = 599.14;
+			float quima1 = 494.76;
+			float quima2 = 510.86;
+			float quiml1 = 571.23;
+			float quiml2 = 556.98;
+			float quiml5 = 582.91;
+			float quiml6 = 559.37;
+			while (red >= 300 and agrn >= agr) {
+				cout << "Agronomia " << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agrl1 and ren >= 2 and esc >= 2) {
+				cout << "Agronomia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agrl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Agronomia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agrl5 and esc >= 2) {
+				cout << "Agronomia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agrl6 and cor >= 2 and esc >= 2) {
+				cout << "Agronomia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agrl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Agronomia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agrl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Agronomia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agra1 and ind >= 2) {
+				cout << "Agronomia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and agrn >= agra2 and qui >= 2) {
+				cout << "Agronomia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bio) {
+				cout << "Engenharia de Bioprocessos e Biotecnologia " << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol1 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia de Bioprocessos e Biotecnologia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia de Bioprocessos e Biotecnologia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol5 and esc >= 2) {
+				cout << "Engenharia de Bioprocessos e Biotecnologia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= biol6 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia de Bioprocessos e Biotecnologia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bioa1 and ind >= 2) {
+				cout << "Engenharia de Bioprocessos e Biotecnologia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and bion >= bioa2 and qui >= 2) {
+				cout << "Engenharia de Bioprocessos e Biotecnologia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and flon >= flo) {
+				cout << "Engenharia Florestal " << endl;
+				break;
+			}
+			while (red >= 300 and flon >= flol1 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Florestal para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and flon >= flol2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Florestal para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and flon >= flol5 and esc >= 2) {
+				cout << "Engenharia Florestal para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and flon >= flol6 and cor >= 2 and esc >= 2) {
+				cout << "Engenharia Florestal para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and flon >= flol10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Engenharia Florestal para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and flon >= floa1 and ind >= 2) {
+				cout << "Engenharia Florestal para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and flon >= floa2 and qui >= 2) {
+				cout << "Engenharia Florestal para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quim) {
+				cout << "Química Ambiental " << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml1 and ren >= 2 and esc >= 2) {
+				cout << "Química Ambiental para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Química Ambiental para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml5 and esc >= 2) {
+				cout << "Química Ambiental para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quiml6 and cor >= 2 and esc >= 2) {
+				cout << "Química Ambiental para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quima1 and ind >= 2) {
+				cout << "Química Ambiental para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and quimn >= quima2 and qui >= 2) {
+				cout << "Química Ambiental para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Miracema:" << endl << " " << endl;
+			float edfn = ((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12);
+			float edf = 595.94;
+			float edfa1 = 540.11;
+			float edfa2 = 569.47;
+			float edfl1 = 580.27;
+			float edfl2 = 587.1;
+			float edfl5 = 589.7;
+			float edfl6 = 585.64;
+			float edfl14 = 521.78;
+			float pedn = ((red + nat + hum + lin + mat) / 5);
+			float ped = 585.87;
+			float peda1 = 473.95;
+			float peda2 = 517.95;
+			float pedl1 = 555.99;
+			float pedl2 = 550.39;
+			float pedl5 = 597.27;
+			float pedl6 = 565.89;
+			float pedl10 = 465.87;
+			float pedl14 = 476.77;
+			float psin = ((red + (nat * 4) + hum + (lin * 4) + (mat * 3)) / 13);
+			float psi = 683.37;
+			float psia1 = 599.31;
+			float psia2 = 546.28;
+			float psil1 = 617.6;
+			float psil2 = 627.69;
+			float psil5 = 668.37;
+			float psil6 = 632.94;
+			float psil10 = 516.69;
+			float psil14 = 535.38;
+			float sern = ((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12);
+			float ser = 594.89;
+			float sera1 = 515.49;
+			float sera2 = 552.36;
+			float serl1 = 561.41;
+			float serl2 = 577.21;
+			float serl5 = 600.01;
+			float serl6 = 562.57;
+			float serl10 = 466.95;
+			float serl14 = 569.18;
+			while (red >= 300 and edfn >= edf) {
+				cout << "Educação Física " << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl1 and ren >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl5 and esc >= 2) {
+				cout << "Educação Física para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl6 and cor >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfa1 and ind >= 2) {
+				cout << "Educação Física para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfa2 and qui >= 2) {
+				cout << "Educação Física para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= ped) {
+				cout << "Pedagogia " << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= pedl1 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= pedl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= pedl5 and esc >= 2) {
+				cout << "Pedagogia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= pedl6 and cor >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= pedl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= pedl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= peda1 and ind >= 2) {
+				cout << "Pedagogia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 200 and pedn >= peda2 and qui >= 2) {
+				cout << "Pedagogia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psi) {
+				cout << "Psicologia " << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psil1 and ren >= 2 and esc >= 2) {
+				cout << "Psicologia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psil2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Psicologia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psil5 and esc >= 2) {
+				cout << "Psicologia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psil6 and cor >= 2 and esc >= 2) {
+				cout << "Psicologia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psil10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Psicologia para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psil14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Psicologia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psia1 and ind >= 2) {
+				cout << "Psicologia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and psin >= psia2 and qui >= 2) {
+				cout << "Psicologia para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= ser) {
+				cout << "Serviço Social " << endl;
+				break;
+			}
+			while (red >= 300 and sern >= serl1 and ren >= 2 and esc >= 2) {
+				cout << "Serviço Social para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= serl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Serviço Social para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= serl5 and esc >= 2) {
+				cout << "Serviço Social para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= serl6 and cor >= 2 and esc >= 2) {
+				cout << "Serviço Social para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= serl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Serviço Social para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= serl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Serviço Social para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= sera1 and ind >= 2) {
+				cout << "Serviço Social para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and sern >= sera2 and qui >= 2) {
+				cout << "Serviço Social para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Tocantinópolis:" << endl << " " << endl;
+			float socn = (((red * 3) + nat + (hum * 4) + (lin * 3) + mat) / 12);
+			float soc = 612.08;
+			float soca1 = 487.73;
+			float soca2 = 543.58;
+			float socl1 = 573.46;
+			float socl2 = 579.48;
+			float socl5 = 588.14;
+			float socl6 = 602.29;
+			float socl10 = 446.29;
+			float edfn = (((red * 2) + (nat * 3) + (hum * 3) + (lin * 4) + mat) / 13);
+			float edf = 583.61;
+			float edfa1 = 532.28;
+			float edfa2 = 560.63;
+			float edfl1 = 570.8;
+			float edfl2 = 570.57;
+			float edfl5 = 579.11;
+			float edfl6 = 579.55;
+			float edfl10 = 467.18;
+			float pedn = ((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12);
+			float ped = 588.92;
+			float peda1 = 465.46;
+			float peda2 = 522.58;
+			float pedl1 = 585.97;
+			float pedl2 = 578.37;
+			float pedl5 = 589.05;
+			float pedl6 = 570.72;
+			while (red >= 300 and socn >= soc) {
+				cout << "Ciências Sociais " << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl1 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Sociais para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Sociais para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl5 and esc >= 2) {
+				cout << "Ciências Sociais para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl6 and cor >= 2 and esc >= 2) {
+				cout << "Ciências Sociais para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= socl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Ciências Sociais para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= soca1 and ind >= 2) {
+				cout << "Ciências Sociais para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and socn >= soca2 and qui >= 2) {
+				cout << "Ciências Sociais para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edf) {
+				cout << "Educação Física " << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl1 and ren >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl5 and esc >= 2) {
+				cout << "Educação Física para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl6 and cor >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Educação Física para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfa1 and ind >= 2) {
+				cout << "Educação Física para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and edfn >= edfa2 and qui >= 2) {
+				cout << "Educação Física para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= ped) {
+				cout << "Pedagogia " << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl1 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl5 and esc >= 2) {
+				cout << "Pedagogia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl6 and cor >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= peda1 and ind >= 2) {
+				cout << "Pedagogia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= peda2 and qui >= 2) {
+				cout << "Pedagogia para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Arraias:" << endl << " " << endl;
+			float turn = (((red * 3) + (nat * 2) + (hum * 4) + (lin * 3) + mat) / 13);
+			float tur = 584.97;
+			float tura1 = 500.47;
+			float tura2 = 515.01;
+			float turl1 = 548.9;
+			float turl2 = 571.3;
+			float turl5 = 574.9;
+			float turl6 = 550.84;
+			float turl10 = 493.92;
+			while (red >= 400 and turn >= tur) {
+				cout << "Turismo Patrimonial e Socioambiental " << endl;
+				break;
+			}
+			while (red >= 400 and turn >= turl1 and ren >= 2 and esc >= 2) {
+				cout << "Turismo Patrimonial e Socioambiental para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and turn >= turl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Turismo Patrimonial e Socioambiental para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and turn >= turl5 and esc >= 2) {
+				cout << "Turismo Patrimonial e Socioambiental para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and turn >= turl6 and cor >= 2 and esc >= 2) {
+				cout << "Turismo Patrimonial e Socioambiental para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and turn >= turl10 and def >= 2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Turismo Patrimonial e Socioambiental para candidato portador de deficiência, negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 400 and turn >= tura1 and ind >= 2) {
+				cout << "Turismo Patrimonial e Socioambiental para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 400 and turn >= tura2 and qui >= 2) {
+				cout << "Turismo Patrimonial e Socioambiental para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << " " << endl;
+		{
+			cout << "Universidade Federal do Tocantins, Campus Arraias (Buritizinho):" << endl << " " << endl;
+			float maten = ((red + nat + (hum * 2) + (lin * 4) + (mat * 4)) / 12);
+			float mate = 588.18;
+			float matea2 = 551.83;
+			float matel1 = 574.91;
+			float matel2 = 565.24;
+			float matel5 = 598.51;
+			float matel6 = 574.68;
+			float pedn = ((red + nat + (hum * 4) + (lin * 4) + (mat * 2)) / 12);
+			float ped = 577.15;
+			float peda1 = 506.96;
+			float peda2 = 539.67;
+			float pedl1 = 560.53;
+			float pedl2 = 569.88;
+			float pedl5 = 605.73;
+			float pedl6 = 563.17;
+			float pedl14 = 517.25;
+			while (red >= 300 and maten >= mate) {
+				cout << "Matemática " << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel1 and ren >= 2 and esc >= 2) {
+				cout << "Matemática para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Matemática para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel5 and esc >= 2) {
+				cout << "Matemática para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matel6 and cor >= 2 and esc >= 2) {
+				cout << "Matemática para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and maten >= matea2 and qui >= 2) {
+				cout << "Matemática para candidato quilombola" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= ped) {
+				cout << "Pedagogia " << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl1 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl2 and cor >= 2 and ren >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl5 and esc >= 2) {
+				cout << "Pedagogia para candidato estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl6 and cor >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= pedl14 and def >= 2 and cor >= 2 and esc >= 2) {
+				cout << "Pedagogia para candidato portador de deficiência, negro, pardo ou indígena e estudande de escola pública no ensino médio" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= peda1 and ind >= 2) {
+				cout << "Pedagogia para candidato indígena" << endl;
+				break;
+			}
+			while (red >= 300 and pedn >= peda2 and qui >= 2) {
+				cout << "Pedagogia para candidato quilombola" << endl;
+				break;
+			}
+		}
+		cout << "FRASE CRIPTOGRAFADA: 1000010010011110100000100100000010100110100111101010010010101000100010100100001 " << " " << endl;
+		cout << "Você deseja fazer outra simulação?" << endl << "Se sim digite 1. Se não digite 0." << endl;
+		cin >> rep;
+	} while (rep != 0);
+	//getchar();
+}
+
+
+// Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração
+// Depurar programa: F5 ou menu Depurar > Iniciar Depuração
+
+// Dicas para Começar: 
+//   1. Use a janela do Gerenciador de Soluções para adicionar/gerenciar arquivos
+//   2. Use a janela do Team Explorer para conectar-se ao controle do código-fonte
+//   3. Use a janela de Saída para ver mensagens de saída do build e outras mensagens
+//   4. Use a janela Lista de Erros para exibir erros
+//   5. Ir Para o Projeto > Adicionar Novo Item para criar novos arquivos de código, ou Projeto > Adicionar Item Existente para adicionar arquivos de código existentes ao projeto
+//   6. No futuro, para abrir este projeto novamente, vá para Arquivo > Abrir > Projeto e selecione o arquivo. sln
