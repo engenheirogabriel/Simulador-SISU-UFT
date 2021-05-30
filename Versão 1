@@ -11,8 +11,8 @@ int main() {
 		cout << "Contato: engenheiroancap@gmail.com" << endl;
 		cout << "Ofereço aulas de reforço e de programação, também faço projetos de algoritmos."<< endl;
 		cout << "" << endl;
-		cout << "Doações no endereço bitcoin:" << endl;
-		cout << "bc1qhqns4g0q6gv7xau64rqva087erxp0ndtcrx200" << endl;
+		cout << "Doações no endereço nano:" << endl;
+		cout << "nano_1uxndhc1o37ex5azfwrgu8ta54ok4jcftxbfpgtg761dhi45amhb9hoe59oz" << endl;
 		cout << "" << endl;
 		cout << "Utilize .(ponto) como separador decimal. " << endl;
 		cout << " " << endl;
