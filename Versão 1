@@ -6,7 +6,7 @@ int main() {
 	do {
 		//system("cls");
 		cout << "Viva o cripto-anarquismo da sociedade de leis privadas prevista pela escola de Viena!" << endl;
-		cout << "Seja bem vindo ao simulador do SISU 2020/1, um projeto independente do acadêmico de Engenharia Civil, Gabriel Miranda de Oliveira, que calcula cursos compatíveis com a nota do pretendente à vaga na Universidade Federal do Tocantins." << endl;
+		cout << "Seja bem vindo ao simulador do SISU 2020/1, um projeto independente do acadêmico de Engenharia Civil, Gabriel Miranda, que calcula cursos compatíveis com a nota do pretendente à vaga na Universidade Federal do Tocantins." << endl;
 		cout << "" << endl;
 		cout << "Contato: engenheiroancap@gmail.com" << endl;
 		cout << "Ofereço aulas de reforço e de programação, também faço projetos de algoritmos."<< endl;
